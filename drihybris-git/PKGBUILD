@@ -1,0 +1,33 @@
+_pkgname=drihybris
+pkgname=drihybris-git
+pkgver=r1.fbaf21e
+pkgrel=1
+pkgdesc="custom DRI3-based Xorg extension for use with libhybris"
+url="https://github.com/NotKit/drihybris"
+arch=('x86_64' 'aarch64')
+license=('MIT')
+makedepends=('git' 'xorg-server-devel' 'drihybrisproto')
+provides=("$_pkgname")
+source=('git+https://github.com/NotKit/drihybris')
+md5sums=('SKIP')
+
+pkgver() {
+	cd "$_pkgname"
+	printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+
+build() {
+	cd "$_pkgname"
+	export LDFLAGS="$LDFLAGS -Wl,-z,lazy"
+	./autogen.sh \
+		--build=$CBUILD \
+		--host=$CHOST \
+		--prefix=/usr \
+	make
+}
+
+package() {
+	cd "$_pkgname"
+	make DESTDIR="$pkgdir" install
+	install -Dm644 COPYING "$pkgdir"/usr/share/licenses/$_pkgname/COPYING
+}

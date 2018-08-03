@@ -1,0 +1,21 @@
+_pkgname=drihybrisproto
+pkgname=$_pkgname-git
+pkgver=r1.fbaf21e
+pkgrel=1
+pkgdesc="X11 DRIHYBRIS protocol"
+url="https://github.com/NotKit/drihybris"
+arch=('any')
+license=('MIT')
+makedepends=('git')
+provides=("$_pkgname")
+source=('git+https://github.com/NotKit/drihybris')
+md5sums=('SKIP')
+
+pkgver() {
+  cd "$srcdir/drihybris"
+  printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+
+package() {
+    install -Dm644 "$srcdir/drihybris/src/drihybrisproto.h" "$pkgdir/usr/include/X11/extensions/drihybrisproto.h"
+}

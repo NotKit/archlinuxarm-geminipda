@@ -1,0 +1,39 @@
+_pkgname=xf86-video-hwcomposer
+pkgname=$_pkgname-git
+pkgver=r126.60f7bfc
+pkgrel=1
+pkgdesc="X.Org driver for Android devices rendering through HWComposer API"
+url="https://github.com/NotKit/$_pkgname"
+arch=('x86_64' 'aarch64')
+license=('MIT')
+depends=('libepoxy' 'drihybris')
+makedepends=('git' 'xorg-server-devel' 'drihybrisproto' 'drihybris' 'glamor-hybris')
+source=("git+https://github.com/NotKit/$_pkgname")
+md5sums=('SKIP')
+
+pkgver() {
+	cd "$_pkgname"
+	printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+
+build() {
+	cd "$_pkgname"
+export LDFLAGS="$LDFLAGS -Wl,-z,lazy"
+	export CPPFLAGS="$CPPFLAGS -I/usr/include/android -DMESA_EGL_NO_X11_HEADERS"
+
+	NOCONFIGURE=1 ./autogen.sh
+
+	./configure \
+		--build=$CBUILD \
+		--host=$CHOST \
+		--prefix=/usr \
+		--enable-drihybris \
+		--enable-glamor-hybris
+    make
+}
+
+package() {
+	cd "$_pkgname"
+	make DESTDIR="$pkgdir" install
+	install -Dm644 COPYING "$pkgdir"/usr/share/licenses/$_pkgname/COPYING
+}
