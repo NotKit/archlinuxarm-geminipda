@@ -1,4 +1,5 @@
-# Maintainer: Bhushan Shah < bshah at kde dot org >
+# Contributor: Bhushan Shah < bshah at kde dot org >
+
 pkgname=lxc-android-geminipda
 provides=('lxc-android')
 pkgver=0.1

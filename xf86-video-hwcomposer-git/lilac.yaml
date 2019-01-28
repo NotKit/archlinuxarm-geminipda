@@ -1,0 +1,10 @@
+maintainers:
+  - github: NotKit
+
+build_prefix: extra-aarch64
+
+depends:
+  - drihybrisproto-git
+  - drihybris-git
+  - glamor-hybris-git
+  - libhybris-geminipda-git

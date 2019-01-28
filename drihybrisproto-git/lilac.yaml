@@ -1,0 +1,4 @@
+maintainers:
+  - github: NotKit
+
+build_prefix: extra-aarch64
