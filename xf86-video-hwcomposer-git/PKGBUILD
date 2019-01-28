@@ -7,7 +7,7 @@ url="https://github.com/NotKit/$_pkgname"
 arch=('x86_64' 'aarch64')
 license=('MIT')
 depends=('libepoxy' 'drihybris' 'libhybris' 'glamor-hybris')
-makedepends=('git' 'xorg-server-devel' 'drihybrisproto')
+makedepends=('git' 'pixman' 'xorg-server-devel' 'drihybrisproto')
 source=("git+https://github.com/NotKit/$_pkgname")
 md5sums=('SKIP')
 

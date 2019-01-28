@@ -3,13 +3,13 @@ pkgname=$_pkgname-git
 pkgver=r856.948bc3c
 pkgrel=1
 pkgdesc="glamor Xserver 2D acceleration modified to work with libhybris drivers"
-url="https://github.com/gemian/glamor-hybris"
+url="https://github.com/NotKit/glamor-hybris"
 arch=('x86_64' 'aarch64')
 license=('MIT')
-depends=('libepoxy' 'drihybris' 'libxfont2')
-makedepends=('git' 'xorg-server-devel' 'drihybrisproto')
+depends=('libepoxy' 'drihybris' 'libhybris' 'libxfont2')
+makedepends=('git' 'pixman' 'xorg-server-devel' 'drihybrisproto')
 provides=("$_pkgname")
-source=('git+https://github.com/gemian/glamor-hybris')
+source=('git+https://github.com/NotKit/glamor-hybris')
 md5sums=('SKIP')
 
 pkgver() {
