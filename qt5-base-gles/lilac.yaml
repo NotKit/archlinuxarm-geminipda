@@ -1,0 +1,9 @@
+maintainers:
+  - github: NotKit
+
+build_prefix: extra-aarch64
+
+packages:
+  - qt5-base-gles
+
+time_limit_hours: 4
