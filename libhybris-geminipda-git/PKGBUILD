@@ -2,13 +2,13 @@
 pkgname=libhybris-geminipda-git
 provides=('libhybris')
 _pkgbase=libhybris
-pkgver=1493.cd01cf8
+pkgver=1495.2081073
 pkgrel=1
 arch=('armv7h' 'aarch64')
 url="https://github.com/libhybris/libhybris"
 license=('Apache')
 depends=('wayland')
-makedepends=('libx11' 'libxext')
+makedepends=('git' 'libx11' 'libxext' 'mesa')
 source=("libhybris::git+https://github.com/gemian/libhybris")
 md5sums=('SKIP')
 options=(debug !strip)
