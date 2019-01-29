@@ -1,0 +1,12 @@
+maintainers:
+  - github: NotKit
+
+build_prefix: extra-aarch64
+
+depends:
+  - qt5-base-gles
+
+time_limit_hours: 4
+
+update_on:
+  - archpkg: qt5-declarative
