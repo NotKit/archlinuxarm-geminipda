@@ -7,3 +7,7 @@ packages:
   - qt5-base-gles
 
 time_limit_hours: 4
+
+update_on:
+- url: https://archlinuxarm.org/packages/aarch64/qt5-base/files
+  regex: '\<h1\>qt5-base ([^\<]+)'
