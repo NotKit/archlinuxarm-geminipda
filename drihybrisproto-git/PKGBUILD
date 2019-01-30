@@ -1,6 +1,6 @@
 _pkgname=drihybrisproto
 pkgname=$_pkgname-git
-pkgver=r1.fbaf21e
+pkgver=r2.3291c0f
 pkgrel=1
 pkgdesc="X11 DRIHYBRIS protocol"
 url="https://github.com/NotKit/drihybris"
