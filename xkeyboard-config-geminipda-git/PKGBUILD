@@ -5,12 +5,12 @@
 pkgname=xkeyboard-config-geminipda-git
 _pkgname=xkeyboard-config
 pkgver=r1932.c258c2d
-pkgrel=1
+pkgrel=2
 pkgdesc="X keyboard configuration files"
 arch=(any)
 license=('custom')
 url="https://www.freedesktop.org/wiki/Software/XKeyboardConfig"
-makedepends=('git' 'intltool' 'xorg-xkbcomp' 'libxslt')
+makedepends=('git' 'intltool' 'xorg-xkbcomp' 'libxslt' 'xorg-util-macros')
 provides=('xkbdata' 'xkeyboard-config')
 replaces=('xkbdata')
 conflicts=('xkbdata' 'xkeyboard-config')
@@ -24,6 +24,9 @@ pkgver() {
 
 build() {
     cd ${_pkgname}
+
+    autoreconf -vif
+    intltoolize --automake --force
 
     ./configure --prefix=/usr \
         --with-xkb-base=/usr/share/X11/xkb \
