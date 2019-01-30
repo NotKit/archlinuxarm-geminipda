@@ -2,7 +2,7 @@
 
 pkgname=lxc-android-geminipda
 provides=('lxc-android')
-pkgver=0.1
+pkgver=0.2
 pkgrel=1
 pkgdesc="LXC container configuration for Android (modified for Gemini PDA)"
 arch=('any')
@@ -10,7 +10,7 @@ url="https://github.com/gemian/lxc-android"
 license=('Apache')
 depends=('lxc' 'cpio')
 makedepends=('git')
-source=('lxc-android::git+https://github.com/gemian/lxc-android.git#branch=master')
+source=('lxc-android::git+https://github.com/gemian/lxc-android.git#branch=bionic')
 md5sums=('SKIP')
 
 package() {
