@@ -1,6 +1,6 @@
 _pkgname=drihybris
 pkgname=drihybris-git
-pkgver=r1.fbaf21e
+pkgver=r2.3291c0f
 pkgrel=1
 pkgdesc="custom DRI3-based Xorg extension for use with libhybris"
 url="https://github.com/NotKit/drihybris"
