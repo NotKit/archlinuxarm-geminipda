@@ -1,7 +1,7 @@
 _pkgname=xf86-video-hwcomposer
 pkgname=$_pkgname-git
 pkgver=r134.192402c
-pkgrel=1
+pkgrel=2
 pkgdesc="X.Org driver for Android devices rendering through HWComposer API"
 url="https://github.com/NotKit/$_pkgname"
 arch=('x86_64' 'aarch64')
@@ -18,7 +18,13 @@ pkgver() {
 
 build() {
 	cd "$_pkgname"
-export LDFLAGS="$LDFLAGS -Wl,-z,lazy"
+
+	# Since pacman 5.0.2-2, hardened flags are now enabled in makepkg.conf
+	# With them, module fail to load with undefined symbol.
+	# See https://bugs.archlinux.org/task/55102 / https://bugs.archlinux.org/task/54845
+	export CFLAGS=${CFLAGS/-fno-plt}
+	export CXXFLAGS=${CXXFLAGS/-fno-plt}
+	export LDFLAGS=${LDFLAGS/,-z,now}
 	export CPPFLAGS="$CPPFLAGS -I/usr/include/android -DMESA_EGL_NO_X11_HEADERS"
 
 	NOCONFIGURE=1 ./autogen.sh
