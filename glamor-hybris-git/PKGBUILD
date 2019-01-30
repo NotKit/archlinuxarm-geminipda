@@ -1,6 +1,6 @@
 _pkgname=glamor-hybris
 pkgname=$_pkgname-git
-pkgver=r856.948bc3c
+pkgver=r853.347463b
 pkgrel=1
 pkgdesc="glamor Xserver 2D acceleration modified to work with libhybris drivers"
 url="https://github.com/NotKit/glamor-hybris"
