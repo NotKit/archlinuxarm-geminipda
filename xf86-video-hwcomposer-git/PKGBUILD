@@ -1,6 +1,6 @@
 _pkgname=xf86-video-hwcomposer
 pkgname=$_pkgname-git
-pkgver=r137.6083d8b
+pkgver=r141.e24fe7a
 pkgrel=1
 pkgdesc="X.Org driver for Android devices rendering through HWComposer API"
 url="https://github.com/NotKit/$_pkgname"
