@@ -2,7 +2,7 @@
 pkgname=libhybris-geminipda-git
 provides=('libhybris')
 _pkgbase=libhybris
-pkgver=1495.2081073
+pkgver=1496.98d0ee3
 pkgrel=1
 arch=('armv7h' 'aarch64')
 url="https://github.com/libhybris/libhybris"
