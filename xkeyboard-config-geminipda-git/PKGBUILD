@@ -4,8 +4,8 @@
 
 pkgname=xkeyboard-config-geminipda-git
 _pkgname=xkeyboard-config
-pkgver=r1932.c258c2d
-pkgrel=2
+pkgver=r1934.64c6c0e
+pkgrel=1
 pkgdesc="X keyboard configuration files"
 arch=(any)
 license=('custom')
