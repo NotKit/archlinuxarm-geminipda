@@ -1,0 +1,8 @@
+maintainers:
+  - github: NotKit
+    email: nekit1000@gmail.com
+
+packages:
+  - pulsecore-headers
+
+build_prefix: extra-aarch64

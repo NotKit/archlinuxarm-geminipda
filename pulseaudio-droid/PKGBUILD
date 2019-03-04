@@ -1,0 +1,44 @@
+pkgname=pulseaudio-droid
+pkgdesc="PulseAudio Droid modules"
+pkgver=11.1.76
+pkgrel=2
+arch=(x86_64 aarch64)
+url="https://github.com/mer-hybris/pulseaudio-modules-droid"
+license=(GPL)
+depends=(pulseaudio expat)
+makedepends=(git android-headers libhybris pulsecore-headers)
+options=(!emptydirs)
+_commit=b00bc7c3ea8cd58da61559769866e75308309ccd  # tags/v11.1.76
+source=("git+https://github.com/mer-hybris/pulseaudio-modules-droid.git")
+sha256sums=('SKIP')
+
+pkgver() {
+  cd pulseaudio-modules-droid
+  git describe --tags | sed 's/^v//;s/-/+/g'
+}
+
+prepare() {
+  cd pulseaudio-modules-droid
+  NOCONFIGURE=1 ./bootstrap.sh
+}
+
+build() {
+  cd pulseaudio-modules-droid
+
+  ./configure --prefix=/usr \
+    --sysconfdir=/etc \
+    --libexecdir=/usr/lib \
+    --localstatedir=/var \
+    --disable-static \
+   DATADIRNAME=share
+
+  make
+}
+
+package() {
+  depends=("pulseaudio>=12.2")
+  cd pulseaudio-modules-droid
+
+  make -j1 DESTDIR="$pkgdir" install
+}
+

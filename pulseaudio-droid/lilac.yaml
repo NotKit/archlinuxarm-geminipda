@@ -1,0 +1,10 @@
+maintainers:
+  - github: NotKit
+    email: nekit1000@gmail.com
+
+build_prefix: extra-aarch64
+
+depends:
+  - android-headers
+  - libhybris-geminipda-git 
+  - pulseaudio: pulsecore-headers
