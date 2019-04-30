@@ -4,7 +4,7 @@
 
 pkgname=xkeyboard-config-geminipda-git
 _pkgname=xkeyboard-config
-pkgver=r1934.64c6c0e
+pkgver=r1935.a6c5392
 pkgrel=1
 pkgdesc="X keyboard configuration files"
 arch=(any)
