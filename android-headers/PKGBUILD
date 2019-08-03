@@ -1,13 +1,13 @@
-# Maintainer: Bhushan Shah < bshah at kde dot org >
+# Contributor: Bhushan Shah < bshah at kde dot org >
 pkgname=android-headers
-pkgver=7.1.1
+pkgver=9.0.0
 pkgrel=1
 pkgdesc="Android headers extracted through libhybris"
 arch=('any')
-url="https://github.com/halium/android-headers"
+url="https://github.com/gemian/android-headers"
 license=('Apache')
 makedepends=('git')
-source=('android-headers::git+https://github.com/halium/android-headers.git#branch=halium-7.1')
+source=('android-headers::git+https://github.com/gemian/android-headers.git#branch=android-9')
 md5sums=('SKIP')
 
 package() {

@@ -9,7 +9,7 @@ url="https://github.com/libhybris/libhybris"
 license=('Apache')
 depends=('wayland')
 makedepends=('git' 'libx11' 'libxext' 'mesa')
-source=("libhybris::git+https://github.com/gemian/libhybris")
+source=("libhybris::git+https://github.com/gemian/libhybris#branch=android-9")
 md5sums=('SKIP')
 options=(debug !strip)
 
